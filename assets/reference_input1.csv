@@ -1,0 +1,4 @@
+geneid,reference_fasta
+actin,<full_path>/actin_referenceDB.fasta
+hsp70,<full_path>/hsp70_referenceDB.fasta
+18S,<full_path>/18S_referenceDB.fasta
