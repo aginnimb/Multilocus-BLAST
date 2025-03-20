@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+### We need to add comments to code
+
 import os 
 import subprocess 
 import argparse
