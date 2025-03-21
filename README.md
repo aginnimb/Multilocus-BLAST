@@ -12,10 +12,10 @@
      workflows use the "tube map" design for that. See https://nf-co.re/docs/contributing/design_guidelines#examples for examples.   -->
 <!-- TODO nf-core: Fill in short bullet-pointed list of the default steps in the pipeline -->
 
-## Input data requirments
-> assemblies samplesheet (refer assets/fasta_samplesheet.csv)
-> reference genomes (refer assets/reference_input1.csv)
-> consensus genome ( fasta format)
+## Input data requirements
+ assemblies samplesheet (refer assets/fasta_samplesheet.csv)
+ reference genomes (refer assets/reference_input1.csv)
+ consensus genome (fasta format)
 
 1. BLAST ([`BLAST`](https://github.com/nf-core/modules/tree/master/modules/nf-core/blast))
 2. Quality assesment for genome assemblies ([`quast`](https://github.com/nf-core/modules/tree/master/modules/nf-core/quast))
@@ -65,8 +65,8 @@ nextflow run main.nf \
 multilocusblast was originally written by Anusha Reddy Ginni.
 
 Thanks to these amazing people for their assistance in the development of this pipeline:
-**[Contributors1](https://github.com/SMorrison42)**
-**[Contributors1](https://github.com/hseabolt)**
+**[SMorrison42](https://github.com/SMorrison42)**
+**[hseabolt](https://github.com/hseabolt)**
 
 
 <!-- TODO nf-core: If applicable, make list of people who have also contributed -->
