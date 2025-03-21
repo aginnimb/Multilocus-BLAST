@@ -13,9 +13,10 @@
 <!-- TODO nf-core: Fill in short bullet-pointed list of the default steps in the pipeline -->
 
 ## Input data requirements
- assemblies samplesheet (refer assets/fasta_samplesheet.csv)
- reference genomes (refer assets/reference_input1.csv)
- consensus genome (fasta format)
+Prepare the input samplesheets as per the format shown in the dummy reference files. DO NOT change the column headers as it was configured that way in the pipeline.
+* assemblies samplesheet (refer assets/fasta_samplesheet.csv)
+* reference genomes (refer assets/reference_input1.csv)
+* consensus genome (fasta format)
 
 1. BLAST ([`BLAST`](https://github.com/nf-core/modules/tree/master/modules/nf-core/blast))
 2. Quality assesment for genome assemblies ([`quast`](https://github.com/nf-core/modules/tree/master/modules/nf-core/quast))
@@ -56,7 +57,7 @@ nextflow run main.nf \
 ```
 
 > [!WARNING]
-> Please provide pipeline parameters via the CLI or Nextflow `-params-file` option. Custom config files including those provided by the `-c` Nextflow option can be used to provide any configuration as per your environment setup_**except for parameters**_;
+> Please provide pipeline parameters via the CLI or Nextflow `-params-file` option. Custom config files including those provided by the `-c` Nextflow option can be used to provide any configuration as per your environment setup _**except for parameters**_;
 > see [docs](https://nf-co.re/usage/configuration#custom-configuration-files).
 
 
