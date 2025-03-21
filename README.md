@@ -1,6 +1,6 @@
 ## Introduction
 
-**wdpb_cdsl/multilocusblast** is a bioinformatics pipeline that ...
+**MultilocusBlast** is a bioinformatics pipeline written in Nextflow. It performs BLAST based multi-locus species characterization 
 
 <!-- TODO nf-core:
    Complete this sentence with a 2-3 sentence summary of what types of data the pipeline ingests, a brief overview of the
@@ -12,8 +12,13 @@
      workflows use the "tube map" design for that. See https://nf-co.re/docs/contributing/design_guidelines#examples for examples.   -->
 <!-- TODO nf-core: Fill in short bullet-pointed list of the default steps in the pipeline -->
 
-1. Read QC ([`FastQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/))
-2. Present QC for raw reads ([`MultiQC`](http://multiqc.info/))
+## Input data requirments
+> assemblies samplesheet (refer assets/fasta_samplesheet.csv)
+> reference genomes (refer assets/reference_input1.csv)
+> consensus genome ( fasta format)
+
+1. BLAST ([`BLAST`](https://github.com/nf-core/modules/tree/master/modules/nf-core/blast))
+2. Quality assesment for genome assemblies ([`quast`](https://github.com/nf-core/modules/tree/master/modules/nf-core/quast))
 
 ## Usage
 
@@ -36,26 +41,33 @@ Each row represents a fastq file (single-end) or a pair of fastq files (paired e
 
 -->
 
-Now, you can run the pipeline using:
+Now, you can run the pipeline as below on your terminal or modify the run_MULTILOCUS.sh if you want to submit to HPC:
 
 <!-- TODO nf-core: update the following command to include all required parameters for a minimal example -->
 
 ```bash
-nextflow run wdpb_cdsl/multilocusblast \
-   -profile <docker/singularity/.../institute> \
-   --input samplesheet.csv \
+nextflow run main.nf \
+   -profile <conda,singularity.../institute> \
+   --input fasta_samplesheet.csv \
+   --reference_input reference_input1.csv \
+   --consensus test_reference_Genome.fasta \
+   --pid 75 \ (default, adjust as per your species)
    --outdir <OUTDIR>
 ```
 
 > [!WARNING]
-> Please provide pipeline parameters via the CLI or Nextflow `-params-file` option. Custom config files including those provided by the `-c` Nextflow option can be used to provide any configuration _**except for parameters**_;
+> Please provide pipeline parameters via the CLI or Nextflow `-params-file` option. Custom config files including those provided by the `-c` Nextflow option can be used to provide any configuration as per your environment setup_**except for parameters**_;
 > see [docs](https://nf-co.re/usage/configuration#custom-configuration-files).
 
-## Credits
 
-wdpb_cdsl/multilocusblast was originally written by Anusha Ginni, qxu0@cdc.gov.
+## Credits✨
 
-We thank the following people for their extensive assistance in the development of this pipeline:
+multilocusblast was originally written by Anusha Reddy Ginni.
+
+Thanks to these amazing people for their assistance in the development of this pipeline:
+**[Contributors1](https://github.com/SMorrison42)**
+**[Contributors1](https://github.com/hseabolt)**
+
 
 <!-- TODO nf-core: If applicable, make list of people who have also contributed -->
 
